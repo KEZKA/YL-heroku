@@ -1,12 +1,16 @@
 import os
+from os import path
 
 from flask import Flask
 from flask import jsonify, make_response
 
+from data import db_session
 from data.db_session import create_session
 from data.models.jobs import Jobs
 
 app = Flask(__name__)
+
+db_session.global_init(path.join(path.dirname(__file__), './db/mars_explorer.db'))
 
 
 @app.route('/api/jobs')
