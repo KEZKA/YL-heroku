@@ -10,7 +10,7 @@ from data.models.jobs import Jobs
 
 app = Flask(__name__)
 
-db_session.global_init(path.join(path.dirname(__file__), './db/mars_explorer.db'))
+db_session.global_init('db/mars_explorer.db')
 
 
 @app.route('/api/jobs')
